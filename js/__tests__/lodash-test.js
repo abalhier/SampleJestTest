@@ -24,10 +24,14 @@
 
 'use strict';
 
-var Platform = require('Platform');
+jest.autoMockOff();
 
-if (Platform.OS === 'ios') {
-  module.exports = require('./img/x-white.png');
-} else {
-  module.exports = require('./img/back_white.png');
-}
+const _ = require('lodash');
+
+describe('lodash', () => {
+
+  it('should have version prod version', () => {
+    expect(_.VERSION).toBe('4.6.1');
+  });
+
+});
